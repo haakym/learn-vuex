@@ -11,7 +11,6 @@
     <body>
         <div id="app">
             <counter></counter>
-            <other></other>
         </div>
 
         <script src="/js/app.js"></script>

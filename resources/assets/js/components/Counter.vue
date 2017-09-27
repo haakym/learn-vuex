@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        {{ count }}
+        {{ count }} (The square root of this number is {{ sqrt }})
         <div>
             <button @click="increment">+1</button>
         </div>
@@ -8,12 +8,15 @@
 </template>
 
 <script>
-    import { mapState, mapMutations } from 'vuex';
+    import { mapState, mapMutations, mapGetters, mapActions } from 'vuex';
 
     export default {
-        computed: mapState(['count']),
+        computed: {
+            ...mapState(['count']),
+            ...mapGetters(['sqrt']),
+        },
         methods: {
-            ...mapMutations(['increment'])
+            ...mapActions(['increment'])
         }
     }
 </script>
